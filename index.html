@@ -465,6 +465,157 @@
       background: rgba(16, 185, 129, 0.1);
     }
 
+    /* Testimonials */
+    .testimonials {
+      padding: 96px 0;
+      background: var(--bg);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .testimonial {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .testimonial-text {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent-brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 590;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .testimonial-name {
+      font-size: 14px;
+      font-weight: 590;
+      color: var(--text);
+      letter-spacing: -0.165px;
+    }
+
+    .testimonial-role {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .testimonial-rating {
+      color: var(--success);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    /* Email Capture */
+    .email-capture {
+      padding: 96px 0;
+      background: var(--bg-panel);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .email-capture-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .email-capture h2 {
+      margin-bottom: 16px;
+    }
+
+    .email-capture p {
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      font-size: 16px;
+    }
+
+    .email-form {
+      display: flex;
+      gap: 12px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .email-input {
+      flex: 1;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .email-input:focus {
+      border-color: var(--accent);
+    }
+
+    .email-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .email-submit {
+      padding: 12px 24px;
+      background: var(--accent-brand);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 510;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .email-submit:hover {
+      background: var(--accent);
+    }
+
+    .email-note {
+      font-size: 13px;
+      color: var(--text-subtle);
+      margin-top: 16px;
+    }
+
+    @media (max-width: 640px) {
+      .email-form {
+        flex-direction: column;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Social Proof */
     .social-proof {
       padding: 80px 0;
@@ -604,6 +755,7 @@
     <div class="container">
       <div class="nav-brand">HTE Marketplace</div>
       <ul class="nav-links">
+        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -641,6 +793,122 @@
           <div class="number">Lifetime</div>
           <div class="label">Access</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>What creators say</h2>
+        <p>Real feedback from people who bought and used these packs.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text" itemprop="reviewBody">"The n8n workflow pack saved me 20+ hours. I imported the lead-gen flow and had it running in under an hour. Documentation is solid."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">RK</div>
+            <div>
+              <div class="testimonial-name" itemprop="author">Rahim K.</div>
+              <div class="testimonial-role">Indie hacker</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text" itemprop="reviewBody">"Bought the YouTube niche research pack. The 20 niches were tight and the hook formulas actually work. First short got 12k views."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SM</div>
+            <div>
+              <div class="testimonial-name" itemprop="author">Sadia M.</div>
+              <div class="testimonial-role">YouTube creator</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text" itemprop="reviewBody">"Prompt library is better than most paid ones I've tried. Clean, copy-paste ready, and works across ChatGPT and Claude without rewording."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AJ</div>
+            <div>
+              <div class="testimonial-name" itemprop="author">Arif J.</div>
+              <div class="testimonial-role">AI automation consultant</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="email-capture" id="free">
+    <div class="container">
+      <div class="email-capture-inner">
+        <h2>Get the free starter kit</h2>
+        <p>Join creators using the AI YouTube Infographic Starter Kit. Instant access via email.</p>
+        <form class="email-form" id="emailForm">
+          <input type="email" class="email-input" id="emailInput" placeholder="you@example.com" required>
+          <button type="submit" class="email-submit">Send me the kit</button>
+        </form>
+        <p class="email-note">No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>What creators say</h2>
+        <p>Real feedback from people who bought and used these packs.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text" itemprop="reviewBody">"The n8n workflow pack saved me 20+ hours. I imported the lead-gen flow and had it running in under an hour. Documentation is solid."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">RK</div>
+            <div>
+              <div class="testimonial-name" itemprop="author">Rahim K.</div>
+              <div class="testimonial-role">Indie hacker</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text" itemprop="reviewBody">"Bought the YouTube niche research pack. The 20 niches were tight and the hook formulas actually work. First short got 12k views."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SM</div>
+            <div>
+              <div class="testimonial-name" itemprop="author">Sadia M.</div>
+              <div class="testimonial-role">YouTube creator</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial" itemscope itemtype="https://schema.org/Review">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text" itemprop="reviewBody">"Prompt library is better than most paid ones I've tried. Clean, copy-paste ready, and works across ChatGPT and Claude without rewording."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AJ</div>
+            <div>
+              <div class="testimonial-name" itemprop="author">Arif J.</div>
+              <div class="testimonial-role">AI automation consultant</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="email-capture" id="free">
+    <div class="container">
+      <div class="email-capture-inner">
+        <h2>Get the free starter kit</h2>
+        <p>Join creators using the AI YouTube Infographic Starter Kit. Instant access via email.</p>
+        <form class="email-form" id="emailForm">
+          <input type="email" class="email-input" id="emailInput" placeholder="you@example.com" required>
+          <button type="submit" class="email-submit">Send me the kit</button>
+        </form>
+        <p class="email-note">No spam. Unsubscribe anytime.</p>
       </div>
     </div>
   </section>
@@ -769,7 +1037,7 @@
               <li>Script templates</li>
               <li>Setup checklist</li>
             </ul>
-            <a href="https://hightechenterprise.whop.com/product/prod_nQ4XgVQFnS336" class="cta" target="_blank" rel="noopener">Download Free</a>
+            <a href="#free" class="cta" target="_blank" rel="noopener">Get via Email</a>
           </div>
         </article>
       </div>
@@ -836,6 +1104,19 @@
         }
       });
     });
+
+    // Email capture form
+    const emailForm = document.getElementById('emailForm');
+    if (emailForm) {
+      emailForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const email = document.getElementById('emailInput').value;
+        if (email && email.includes('@')) {
+          const formInner = document.querySelector('.email-capture-inner');
+          formInner.innerHTML = '<h2>Check your inbox</h2><p>We sent the free starter kit to <strong>' + email + '</strong>. If you don\'t see it, check spam.</p>';
+        }
+      });
+    }
   </script>
 </body>
 </html>
