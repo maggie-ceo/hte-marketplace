@@ -84,6 +84,46 @@ header p {
   margin: 0.5rem 0;
 }
 
+.product-card .price.free {
+  color: #facc15;
+}
+
+.product-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.product-desc {
+  color: #cbd5e1;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.product-price {
+  margin: 0.5rem 0;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.free-product {
+  border: 2px dashed #facc15;
+  background: linear-gradient(135deg, #1e293b 0%, #292524 100%);
+}
+
+.free-btn {
+  background: #facc15;
+  color: #0f172a;
+}
+
+.free-btn:hover {
+  background: #eab308;
+}
+
 .product-card ul {
   list-style: none;
   margin: 1rem 0;
