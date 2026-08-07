@@ -6,25 +6,11 @@
   <title>HTE Digital Marketplace — AI Tools for Automation & Productivity</title>
   <meta name="description" content="Premium AI automation tools, prompt packs, workflow templates, bot kits, and YouTube resources. 7 products, instant download.">
   <meta name="keywords" content="AI prompts, n8n workflows, Discord bot kit, Make.com scenarios, automation templates, YouTube niche research">
-  <meta name="author" content="HTE Digital Marketplace">
   <meta property="og:title" content="HTE Digital Marketplace — AI Tools for Automation">
   <meta property="og:description" content="Premium AI automation tools, prompt packs, workflow templates, and bot kits.">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://maggie-ceo.github.io/hte-marketplace/">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "HTE Digital Marketplace",
-    "description": "Premium AI automation tools, prompt packs, workflow templates, and bot kits.",
-    "url": "https://maggie-ceo.github.io/hte-marketplace/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://maggie-ceo.github.io/hte-marketplace/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -124,146 +110,732 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root {
+      --bg: #08090a;
+      --bg-panel: #0f1011;
+      --bg-elevated: #191a1b;
+      --bg-secondary: #28282c;
+      --text: #f7f8f8;
+      --text-secondary: #d0d6e0;
+      --text-muted: #8a8f98;
+      --text-subtle: #62666d;
+      --accent: #7170ff;
+      --accent-hover: #828fff;
+      --accent-brand: #5e6ad2;
+      --border: rgba(255,255,255,0.08);
+      --border-subtle: rgba(255,255,255,0.05);
+      --success: #10b981;
+      --font: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Typography */
+    h1, h2, h3 {
+      font-weight: 510;
+      letter-spacing: -0.704px;
+      line-height: 1.1;
+    }
+
+    h1 {
+      font-size: 48px;
+      letter-spacing: -1.056px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 20px;
+      letter-spacing: -0.24px;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 96px 0;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 9, 10, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-brand {
+      font-size: 15px;
+      font-weight: 510;
+      color: var(--text);
+      letter-spacing: -0.165px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 510;
+      color: var(--text-secondary);
+      letter-spacing: -0.165px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--accent-brand);
+      color: #fff;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 510;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 160px 0 120px;
+      text-align: center;
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse at center, rgba(94, 106, 210, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      margin: 0 auto 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-subtitle {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-size: 18px;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 510;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent-brand);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.02);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    /* Products */
+    .products {
+      padding: 96px 0;
+      background: var(--bg);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .section-header p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 16px auto 0;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .product-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.12);
+      transform: translateY(-2px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .product-card h3 {
+      font-size: 20px;
+      font-weight: 590;
+      letter-spacing: -0.24px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .product-card .desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .product-card .price {
+      font-size: 24px;
+      font-weight: 590;
+      color: var(--accent);
+      margin-bottom: 16px;
+      letter-spacing: -0.288px;
+    }
+
+    .product-card .price.free {
+      color: var(--success);
+    }
+
+    .product-card .features {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .product-card .features li {
+      padding: 6px 0;
+      padding-left: 20px;
+      position: relative;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .product-card .features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    .product-card .cta {
+      display: inline-block;
+      width: 100%;
+      padding: 10px 16px;
+      background: var(--accent-brand);
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 510;
+      transition: background 0.2s;
+    }
+
+    .product-card .cta:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .product-card.free-card {
+      border: 1px dashed rgba(16, 185, 129, 0.3);
+      background: rgba(16, 185, 129, 0.02);
+    }
+
+    .product-card.free-card .cta {
+      background: transparent;
+      border: 1px solid var(--success);
+      color: var(--success);
+    }
+
+    .product-card.free-card .cta:hover {
+      background: rgba(16, 185, 129, 0.1);
+    }
+
+    /* Social Proof */
+    .social-proof {
+      padding: 80px 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      background: var(--bg-panel);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 48px;
+      text-align: center;
+    }
+
+    .proof-item .number {
+      font-size: 48px;
+      font-weight: 510;
+      letter-spacing: -1.056px;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .proof-item .label {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 510;
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 96px 0;
+      background: var(--bg);
+    }
+
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    details {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    details:hover {
+      background: rgba(255,255,255,0.03);
+    }
+
+    summary {
+      font-weight: 510;
+      color: var(--text);
+      font-size: 15px;
+      letter-spacing: -0.165px;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary::after {
+      content: '+';
+      font-size: 20px;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      content: '−';
+    }
+
+    details[open] summary {
+      margin-bottom: 12px;
+    }
+
+    details p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--text-subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .hero {
+        padding: 120px 0 80px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>HTE Digital Marketplace</h1>
-    <p>Premium AI Tools — Automation, Prompts & Workflow Packs</p>
-  </header>
+  <nav>
+    <div class="container">
+      <div class="nav-brand">HTE Marketplace</div>
+      <ul class="nav-links">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#products" class="nav-cta">Browse Products</a>
+    </div>
+  </nav>
 
-  <main>
-    <section class="products">
-      <!-- T1-P1 -->
-      <article class="product-card" itemscope itemtype="https://schema.org/Product">
-        <img src="assets/T1-P1_ai_agent_prompt_library_chatgpt_v1.png" alt="AI Agent Prompt Library - 52 System Prompts" width="1280" height="720" itemprop="image">
-        <h2 itemprop="name">AI Agent Prompt Library</h2>
-        <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          <span itemprop="price" content="19.00">$19</span>
-          <span itemprop="priceCurrency" content="USD">USD</span>
-        </p>
-        <ul>
-          <li>52 system prompts for ChatGPT, Claude, Gemini</li>
-          <li>Ready-to-use templates for coding, writing, analysis</li>
-          <li>One-time purchase, instant download</li>
-        </ul>
-        <a href="https://hightechenterprise.whop.com/product/prod_elSrLDLqDeIOB" class="cta-btn" itemprop="url">Buy Now</a>
-      </article>
+  <section class="hero">
+    <div class="container">
+      <h1>AI tools for automation, YouTube, and productivity</h1>
+      <p class="hero-subtitle">Ready-to-use digital products: prompt libraries, workflow templates, bot kits, and niche research packs. Built for creators and operators.</p>
+      <div class="hero-ctas">
+        <a href="#products" class="btn btn-primary">Browse Products</a>
+        <a href="#faq" class="btn btn-ghost">Learn More</a>
+      </div>
+    </div>
+  </section>
 
-      <!-- T1-P2 -->
-      <article class="product-card" itemscope itemtype="https://schema.org/Product">
-        <img src="assets/T1-P2_n8n_workflow_pack_chatgpt_v1.png" alt="n8n Workflow Template Pack - 12 Flows" width="1280" height="720" itemprop="image">
-        <h2 itemprop="name">n8n Workflow Template Pack</h2>
-        <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          <span itemprop="price" content="29.00">$29</span>
-          <span itemprop="priceCurrency" content="USD">USD</span>
-        </p>
-        <ul>
-          <li>12 production-ready n8n automation flows</li>
-          <li>Email, Slack, CRM, and data sync templates</li>
-          <li>Step-by-step setup guide included</li>
-        </ul>
-        <a href="https://hightechenterprise.whop.com/product/prod_8hyG6o9eYk1Jj" class="cta-btn" itemprop="url">Buy Now</a>
-      </article>
+  <section class="social-proof">
+    <div class="container">
+      <div class="proof-grid">
+        <div class="proof-item">
+          <div class="number">7</div>
+          <div class="label">Digital Products</div>
+        </div>
+        <div class="proof-item">
+          <div class="number">$25–$39</div>
+          <div class="label">One-Time Price</div>
+        </div>
+        <div class="proof-item">
+          <div class="number">Instant</div>
+          <div class="label">Download</div>
+        </div>
+        <div class="proof-item">
+          <div class="number">Lifetime</div>
+          <div class="label">Access</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <!-- T1-P3 -->
-      <article class="product-card" itemscope itemtype="https://schema.org/Product">
-        <img src="assets/T1-P3_discord_telegram_bot_kit_chatgpt_v1.png" alt="Discord + Telegram AI Bot Kit - Ready Code" width="1280" height="720" itemprop="image">
-        <h2 itemprop="name">Discord + Telegram AI Bot Kit</h2>
-        <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          <span itemprop="price" content="39.00">$39</span>
-          <span itemprop="priceCurrency" content="USD">USD</span>
-        </p>
-        <ul>
-          <li>Ready-to-deploy bot code for Discord & Telegram</li>
-          <li>AI-powered moderation, commands, and automation</li>
-          <li>Full documentation + deployment guide</li>
-        </ul>
-        <a href="https://hightechenterprise.whop.com/product/prod_eUQzUf1la8EkT" class="cta-btn" itemprop="url">Buy Now</a>
-      </article>
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <h2>Products</h2>
+        <p>Each product is a self-contained pack with setup guides, ready-to-use files, and clear documentation.</p>
+      </div>
+      <div class="product-grid">
+        <!-- T1-P1 -->
+        <article class="product-card" itemscope itemtype="https://schema.org/Product">
+          <img src="assets/T1-P1_ai_agent_prompt_library_chatgpt_v1.png" alt="AI Agent Prompt Library banner" width="1280" height="720" itemprop="image">
+          <h3 itemprop="name">AI Agent Prompt Library</h3>
+          <p class="desc" itemprop="description">52 system prompts for ChatGPT, Claude, and Gemini. Ready-to-use templates for coding, writing, and analysis.</p>
+          <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="price" content="19.00">$19</span>
+            <meta itemprop="priceCurrency" content="USD">
+          </div>
+          <ul class="features">
+            <li>52 copy-paste system prompts</li>
+            <li>Works with ChatGPT, Claude, Gemini</li>
+            <li>Instant download</li>
+          </ul>
+          <a href="https://hightechenterprise.whop.com/product/prod_elSrLDLqDeIOB" class="cta" target="_blank" rel="noopener">Buy Now</a>
+        </article>
 
-      <!-- T1-P5 -->
-      <article class="product-card" itemscope itemtype="https://schema.org/Product">
-        <img src="assets/T1-P5_niche_research_chatgpt.png" alt="AI YouTube Niche Research Pack - 20 Niches + 50 Hooks" width="1280" height="720" itemprop="image">
-        <div class="product-info">
+        <!-- T1-P2 -->
+        <article class="product-card" itemscope itemtype="https://schema.org/Product">
+          <img src="assets/T1-P2_n8n_workflow_pack_chatgpt_v1.png" alt="n8n Workflow Template Pack banner" width="1280" height="720" itemprop="image">
+          <h3 itemprop="name">n8n Workflow Template Pack</h3>
+          <p class="desc" itemprop="description">12 production-ready n8n automation flows for email, Slack, CRM, and data sync.</p>
+          <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="price" content="29.00">$29</span>
+            <meta itemprop="priceCurrency" content="USD">
+          </div>
+          <ul class="features">
+            <li>12 ready-to-import workflows</li>
+            <li>Step-by-step setup guide</li>
+            <li>Lead gen, email, CRM templates</li>
+          </ul>
+          <a href="https://hightechenterprise.whop.com/product/prod_8hyG6o9eYk1Jj" class="cta" target="_blank" rel="noopener">Buy Now</a>
+        </article>
+
+        <!-- T1-P3 -->
+        <article class="product-card" itemscope itemtype="https://schema.org/Product">
+          <img src="assets/T1-P3_discord_telegram_bot_kit_chatgpt_v1.png" alt="Discord Telegram AI Bot Kit banner" width="1280" height="720" itemprop="image">
+          <h3 itemprop="name">Discord + Telegram AI Bot Kit</h3>
+          <p class="desc" itemprop="description">Ready-to-deploy bot code for Discord and Telegram with AI-powered moderation and automation.</p>
+          <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="price" content="39.00">$39</span>
+            <meta itemprop="priceCurrency" content="USD">
+          </div>
+          <ul class="features">
+            <li>Full bot code included</li>
+            <li>AI moderation + commands</li>
+            <li>Deployment guide</li>
+          </ul>
+          <a href="https://hightechenterprise.whop.com/product/prod_eUQzUf1la8EkT" class="cta" target="_blank" rel="noopener">Buy Now</a>
+        </article>
+
+        <!-- T1-P4 -->
+        <article class="product-card" itemscope itemtype="https://schema.org/Product">
+          <img src="assets/T1-P4_make_scenario_pack_chatgpt_v1.png" alt="Make.com Scenario Pack banner" width="1280" height="720" itemprop="image">
+          <h3 itemprop="name">Make.com Scenario Pack</h3>
+          <p class="desc" itemprop="description">10 production-ready Make.com blueprints for lead gen, notifications, and data pipelines.</p>
+          <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="price" content="25.00">$25</span>
+            <meta itemprop="priceCurrency" content="USD">
+          </div>
+          <ul class="features">
+            <li>10 import-ready .json scenarios</li>
+            <li>Lead gen and notifications</li>
+            <li>Data pipeline flows</li>
+          </ul>
+          <a href="https://hightechenterprise.whop.com/product/prod_ZEbA0XrLXQ8N4" class="cta" target="_blank" rel="noopener">Buy Now</a>
+        </article>
+
+        <!-- T1-P5 -->
+        <article class="product-card" itemscope itemtype="https://schema.org/Product">
+          <img src="assets/T1-P5_niche_research_chatgpt.png" alt="AI YouTube Niche Research Pack banner" width="1280" height="720" itemprop="image">
           <h3 itemprop="name">AI YouTube Niche Research Pack</h3>
-          <p class="product-desc" itemprop="description">20 high-CPM niches + 50 proven hooks. Includes competitor analysis, content calendar, and 2026 algorithm insights.</p>
-          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-            <span class="price" itemprop="price">$27</span>
+          <p class="desc" itemprop="description">20 high-CPM niches + 50 proven hooks. Includes competitor analysis and 2026 algorithm insights.</p>
+          <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="price" content="27.00">$27</span>
             <meta itemprop="priceCurrency" content="USD">
           </div>
-          <a href="https://hightechenterprise.whop.com/product/prod_QFAfOj0dQd4ko" class="cta-button" target="_blank" rel="noopener">Buy Now</a>
-        </div>
-      </article>
+          <ul class="features">
+            <li>20 high-CPM niches</li>
+            <li>50 proven hook formulas</li>
+            <li>Content calendar included</li>
+          </ul>
+          <a href="https://hightechenterprise.whop.com/product/prod_QFAfOj0dQd4ko" class="cta" target="_blank" rel="noopener">Buy Now</a>
+        </article>
 
-      <!-- T1-P4 -->
-      <article class="product-card" itemscope itemtype="https://schema.org/Product">
-        <img src="assets/T1-P4_make_scenario_pack_chatgpt_v1.png" alt="Make.com Scenario Pack - 10 Blueprints" width="1280" height="720" itemprop="image">
-        <h2 itemprop="name">Make.com Scenario Pack</h2>
-        <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-          <span itemprop="price" content="25.00">$25</span>
-          <span itemprop="priceCurrency" content="USD">USD</span>
-        </p>
-        <ul>
-          <li>10 production-ready Make.com blueprints</li>
-          <li>Lead gen, notifications, and data pipeline flows</li>
-          <li>Import-ready .json scenario files</li>
-        </ul>
-        <a href="https://hightechenterprise.whop.com/product/prod_ZEbA0XrLXQ8N4" class="cta-btn" itemprop="url">Buy Now</a>
-      </article>
-
-      <!-- T1-P6 -->
-      <article class="product-card" itemscope itemtype="https://schema.org/Product">
-        <div class="product-info">
-          <h3 itemprop="name">AI YouTube Pro Pack</h3>
-          <p class="product-desc" itemprop="description">200+ video prompts + 25 ready-to-use scripts. Includes hook formulas, shot lists, and thumbnail templates for faceless YouTube channels.</p>
-          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-            <span class="price" itemprop="price">$39</span>
-            <meta itemprop="priceCurrency" content="USD">
+        <!-- T1-P6 -->
+        <article class="product-card" itemscope itemtype="https://schema.org/Product">
+          <div class="product-info">
+            <h3 itemprop="name">AI YouTube Pro Pack</h3>
+            <p class="desc" itemprop="description">200+ video prompts + 25 ready-to-use scripts. Hook formulas, shot lists, and thumbnail templates for faceless YouTube.</p>
+            <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <span itemprop="price" content="39.00">$39</span>
+              <meta itemprop="priceCurrency" content="USD">
+            </div>
+            <ul class="features">
+              <li>200+ video prompts</li>
+              <li>25 ready-to-use scripts</li>
+              <li>Thumbnail templates</li>
+            </ul>
+            <a href="https://hightechenterprise.whop.com/product/prod_D090dU6M7Ukwo" class="cta" target="_blank" rel="noopener">Buy Now</a>
           </div>
-          <a href="https://hightechenterprise.whop.com/product/prod_D090dU6M7Ukwo" class="cta-button" target="_blank" rel="noopener">Buy Now</a>
-        </div>
-      </article>
+        </article>
 
-      <!-- T1-P7 - FREE -->
-      <article class="product-card free-product" itemscope itemtype="https://schema.org/Product">
-        <div class="product-info">
-          <h3 itemprop="name">AI YouTube Infographic Starter Kit</h3>
-          <p class="product-desc" itemprop="description">FREE starter kit for AI YouTube channels. 5 niche ideas, script templates, thumbnail examples, and channel setup checklist.</p>
-          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-            <span class="price free" itemprop="price">FREE</span>
-            <meta itemprop="priceCurrency" content="USD">
+        <!-- T1-P7 - FREE -->
+        <article class="product-card free-card" itemscope itemtype="https://schema.org/Product">
+          <div class="product-info">
+            <h3 itemprop="name">AI YouTube Infographic Starter Kit</h3>
+            <p class="desc" itemprop="description">FREE starter kit for AI YouTube channels. 5 niche ideas, script templates, thumbnail examples, and channel setup checklist.</p>
+            <div class="price free" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <span itemprop="price">FREE</span>
+              <meta itemprop="priceCurrency" content="USD">
+            </div>
+            <ul class="features">
+              <li>5 high-CPM niche ideas</li>
+              <li>Script templates</li>
+              <li>Setup checklist</li>
+            </ul>
+            <a href="https://hightechenterprise.whop.com/product/prod_nQ4XgVQFnS336" class="cta" target="_blank" rel="noopener">Download Free</a>
           </div>
-          <a href="https://hightechenterprise.whop.com/product/prod_nQ4XgVQFnS336" class="cta-button free-btn" target="_blank" rel="noopener">Download Free</a>
-        </div>
-      </article>
-    </section>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    <section class="faq">
-      <h2>Frequently Asked Questions</h2>
-      <details>
-        <summary>How do I receive my purchase?</summary>
-        <p>After payment, you’ll get an instant download link. Files are delivered directly via Whop.</p>
-      </details>
-      <details>
-        <summary>Are these one-time purchases?</summary>
-        <p>Yes. All products are one-time payments with lifetime access to the purchased files.</p>
-      </details>
-      <details>
-        <summary>Do I need coding experience?</summary>
-        <p>Basic familiarity helps, but all packs include step-by-step setup guides for beginners.</p>
-      </details>
-      <details>
-        <summary>Can I use these for client work?</summary>
-        <p>Yes. Commercial use is allowed unless stated otherwise in the product license.</p>
-      </details>
-    </section>
-  </main>
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>How do I receive my purchase?</summary>
+          <p>After payment, you'll get an instant download link via Whop. Files are delivered immediately after purchase confirmation.</p>
+        </details>
+        <details>
+          <summary>Are these one-time purchases?</summary>
+          <p>Yes. All products are one-time payments with lifetime access to the purchased files and updates.</p>
+        </details>
+        <details>
+          <summary>Do I need coding experience?</summary>
+          <p>Basic familiarity helps, but all packs include step-by-step setup guides for beginners.</p>
+        </details>
+        <details>
+          <summary>Can I use these for client work?</summary>
+          <p>Yes. Commercial use is allowed unless stated otherwise in the product license.</p>
+        </details>
+        <details>
+          <summary>What if I need support?</summary>
+          <p>Each product includes documentation. For issues, contact us through Whop after purchase.</p>
+        </details>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2026 HTE Digital Marketplace. All rights reserved.</p>
+    <div class="container">
+      <p>© 2026 HTE Digital Marketplace. All rights reserved.</p>
+    </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // FAQ accordion - close others when one opens
+    document.querySelectorAll('details').forEach(detail => {
+      detail.addEventListener('toggle', () => {
+        if (detail.open) {
+          document.querySelectorAll('details').forEach(other => {
+            if (other !== detail && other.open) {
+              other.open = false;
+            }
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
